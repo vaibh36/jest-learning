@@ -1,17 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GuessedWords from './GuessedWords';
+import Congrats from './Congrats';
 
-function App() {
+class App extends React.Component {
 
-  const [count, setCount] = React.useState(0)
+  render(){
   
     return(
       <div data-test="component-app">
-        <h1 data-test="counter-display">Counter <span data-test="count">{count}</span></h1>
-        <button onClick={() => setCount(count+1)} data-test="increment-button">Increment</button>
+          <Congrats success={true} />
+          <GuessedWords guessedWords={[{guessedWord: 'train', letterMatchCount: 5}]} />
       </div>
     )
+  }
   
 }
 
